@@ -1,0 +1,50 @@
+<!doctype html>
+{% load static %}
+<html lang="zxx">
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% include '_components/style.html' %}
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <!-- Pre Loader -->
+        {% include '_components/preloader.html' %}
+        <!-- End Pre Loader -->
+
+        <!-- Top Header Start -->
+        {% include '_components/top_header.html' %}
+        <!-- Top Header End -->
+
+        <!-- Start Navbar Area -->
+        {% include '_components/navbar.html' %}
+        <!-- End Navbar Area -->
+
+        <!-- Banner Area -->
+        {% if request.path == '/' %}
+            {% include '_components/banner.html' %}
+        {% else %}
+            {% include '_components/inner_banner.html' %}
+        {% endif %} 
+        <!-- Banner Area End -->
+
+        {% block content %}
+        	
+        {% endblock %}
+
+        <!-- Footer Area -->
+        {% include '_components/footer.html' %}
+        <!-- Footer Area End -->
+        
+        {% include '_components/messages.html' %}
+
+        {% include '_components/script.html' %}       
+
+    </body>
+</html>

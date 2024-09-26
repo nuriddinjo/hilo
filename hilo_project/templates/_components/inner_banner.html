@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="inner-banner-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-4">
+                <div class="inner-content">
+                    <h2> {{ title }}</h2>
+                    <ul>
+                        <li><a href="{% url 'hilo:home' %}">Home</a></li>
+                        <li> {{ page_name }}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-8">
+                <div class="inner-img">
+                    <img src="{{ page_icon }}" alt="Images" width="500px" height="300px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
